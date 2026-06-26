@@ -32,7 +32,9 @@ function typeLoop() {
 }
 
 async function updateResumeLink() {
-  const candidates = ['assets/cv.pdf', 'assets/resume.pdf', 'assets/CV.pdf'];
+  const candidates = [
+    'assets/Abdulrahman%20Zidan%20%E2%80%94%20Resume.pdf'
+  ];
   for (const candidate of candidates) {
     try {
       const response = await fetch(candidate, { method: 'HEAD' });
@@ -45,13 +47,13 @@ async function updateResumeLink() {
         return;
       }
     } catch (error) {
-      // Fallback to placeholder link.
+      // Keep the existing resume link if the exact file is missing.
     }
   }
 }
 
 async function updateProfileImage() {
-  const candidates = ['assets/profile.jpg', 'assets/profile.jpeg', 'assets/profile.webp', 'assets/profile.png'];
+  const candidates = ['assets/file.jpeg', 'assets/profile.jpg', 'assets/profile.jpeg', 'assets/profile.webp', 'assets/profile.png'];
   for (const candidate of candidates) {
     try {
       const response = await fetch(candidate, { method: 'HEAD' });
